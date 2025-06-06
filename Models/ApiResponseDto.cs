@@ -7,6 +7,13 @@ namespace msusersgraphql.Models.Dtos
         public int StatusCode { get; set; }
     }
 
+    public class ApiResponseDtoList<T>
+    {
+        public List<T> Data { get; set; } = new List<T>();
+        public List<string> Errors { get; set; } = new List<string>();
+        public int StatusCode { get; set; }
+    }
+
     public class UserDataDto
     {
         public List<UserDto> Items { get; set; } = new List<UserDto>();

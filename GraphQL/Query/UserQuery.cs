@@ -44,18 +44,6 @@ namespace msusersgraphql.Models.GraphQL
                 })
                 .Description("Get an employee by ID");
 
-            Field<EmployeeListType>("employees")
-                .Argument<IntGraphType>("pageNumber")
-                .Argument<IntGraphType>("pageSize")
-                .ResolveAsync(async context => 
-                {
-                    var employeeService = context.RequestServices!.GetRequiredService<IEmployeeService>();
-                    var pageNumber = context.GetArgument<int?>("pageNumber") ?? 1;
-                    var pageSize = context.GetArgument<int?>("pageSize") ?? 10;
-                    return await employeeService.GetEmployeesAsync(pageNumber, pageSize);
-                })
-                .Description("Get a paginated list of employees");
-
             // Person queries
             Field<PersonType>("person")
                 .Argument<StringGraphType>("id")
@@ -67,17 +55,17 @@ namespace msusersgraphql.Models.GraphQL
                 })
                 .Description("Get a person by ID");
 
-            Field<PersonListType>("persons")
-                .Argument<IntGraphType>("pageNumber")
-                .Argument<IntGraphType>("pageSize")
+                  // Person queries
+            Field<ContactType>("contact")
+                .Argument<StringGraphType>("id")
                 .ResolveAsync(async context => 
                 {
-                    var personService = context.RequestServices!.GetRequiredService<IPersonService>();
-                    var pageNumber = context.GetArgument<int?>("pageNumber") ?? 1;
-                    var pageSize = context.GetArgument<int?>("pageSize") ?? 10;
-                    return await personService.GetPersonsAsync(pageNumber, pageSize);
+                    var contactService = context.RequestServices!.GetRequiredService<IContactService>();
+                    var id = context.GetArgument<string>("id");
+                    return await contactService.GetContactByIdPersonAsync(id);
                 })
-                .Description("Get a paginated list of persons");
+                .Description("Get a contact by ID");
+
         }
     }
 }

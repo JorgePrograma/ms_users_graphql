@@ -17,19 +17,4 @@ namespace msusersgraphql.GraphQL.Types
             Field(x => x.SecondLastName, nullable: true).Description("The second last name of the person");
         }
     }
-
-    public sealed class PersonListType : ObjectGraphType<PersonListDto>
-    {
-        public PersonListType()
-        {
-            Name = "PersonList";
-            Field(x => x.TotalCount).Description("Total count of persons");
-            Field(x => x.PageNumber).Description("Current page number");
-            Field(x => x.PageSize).Description("Page size");
-            Field<ListGraphType<PersonType>>("data")
-                .Description("List of persons")
-                .Resolve(context => context.Source.Data);
-
-        }
-    }
 }

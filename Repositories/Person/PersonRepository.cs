@@ -16,7 +16,7 @@ namespace msusersgraphql.Repositories.User
         {
             try
             {
-                var url = $"employee/get-filter?idFilter={id}";
+                var url = $"person/get-filter?idFilter={id}";
 
                 var response = await _httpClient.GetAsync(url);
 

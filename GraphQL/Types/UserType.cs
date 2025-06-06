@@ -36,33 +36,6 @@ namespace msusersgraphql.GraphQL.Types
                     }
                 })
                 .Description("Employee data for this user");
-
-            // Campo relacionado: Persona (a través del empleado)
-            Field<PersonType>("person")
-                .ResolveAsync(async context =>
-                {
-                    var personService = context.RequestServices!.GetRequiredService<IPersonService>();
-                    var employeeService = context.RequestServices!.GetRequiredService<IEmployeeService>();
-                    var user = context.Source;
-
-                    try
-                    {
-                        // Primero buscar el empleado para obtener el IdPerson
-                        var employees = await employeeService.GetEmployeesAsync(1, 1000);
-                        var employee = employees.Data.FirstOrDefault(e => e.IdUser == user.Id);
-
-                        if (employee?.IdPerson != null)
-                        {
-                            return await personService.GetPersonByIdAsync(employee.IdPerson);
-                        }
-                        return null;
-                    }
-                    catch
-                    {
-                        return null;
-                    }
-                })
-                .Description("Person data for this user");
         }
     }
 
