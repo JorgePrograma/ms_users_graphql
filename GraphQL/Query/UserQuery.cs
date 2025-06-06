@@ -1,0 +1,83 @@
+using GraphQL;
+using GraphQL.Types;
+using msusersgraphql.GraphQL.Types;
+using msusersgraphql.Services.User;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace msusersgraphql.Models.GraphQL
+{
+    public class UserQuery : ObjectGraphType
+    {
+        public UserQuery()
+        {
+            // User queries
+            Field<UserType>("user")
+                .Argument<StringGraphType>("id")
+                .ResolveAsync(async context => 
+                {
+                    var userService = context.RequestServices!.GetRequiredService<IUserService>();
+                    var id = context.GetArgument<string>("id");
+                    return await userService.GetUserByIdAsync(id);
+                })
+                .Description("Get a user by ID");
+
+            Field<UserListType>("users")
+                .Argument<IntGraphType>("pageNumber")
+                .Argument<IntGraphType>("pageSize")
+                .ResolveAsync(async context => 
+                {
+                    var userService = context.RequestServices!.GetRequiredService<IUserService>();
+                    var pageNumber = context.GetArgument<int?>("pageNumber") ?? 1;
+                    var pageSize = context.GetArgument<int?>("pageSize") ?? 10;
+                    return await userService.GetUsersAsync(pageNumber, pageSize);
+                })
+                .Description("Get a paginated list of users");
+
+            // Employee queries
+            Field<EmployeeType>("employee")
+                .Argument<StringGraphType>("id")
+                .ResolveAsync(async context => 
+                {
+                    var employeeService = context.RequestServices!.GetRequiredService<IEmployeeService>();
+                    var id = context.GetArgument<string>("id");
+                    return await employeeService.GetEmployeeByIdAsync(id);
+                })
+                .Description("Get an employee by ID");
+
+            Field<EmployeeListType>("employees")
+                .Argument<IntGraphType>("pageNumber")
+                .Argument<IntGraphType>("pageSize")
+                .ResolveAsync(async context => 
+                {
+                    var employeeService = context.RequestServices!.GetRequiredService<IEmployeeService>();
+                    var pageNumber = context.GetArgument<int?>("pageNumber") ?? 1;
+                    var pageSize = context.GetArgument<int?>("pageSize") ?? 10;
+                    return await employeeService.GetEmployeesAsync(pageNumber, pageSize);
+                })
+                .Description("Get a paginated list of employees");
+
+            // Person queries
+            Field<PersonType>("person")
+                .Argument<StringGraphType>("id")
+                .ResolveAsync(async context => 
+                {
+                    var personService = context.RequestServices!.GetRequiredService<IPersonService>();
+                    var id = context.GetArgument<string>("id");
+                    return await personService.GetPersonByIdAsync(id);
+                })
+                .Description("Get a person by ID");
+
+            Field<PersonListType>("persons")
+                .Argument<IntGraphType>("pageNumber")
+                .Argument<IntGraphType>("pageSize")
+                .ResolveAsync(async context => 
+                {
+                    var personService = context.RequestServices!.GetRequiredService<IPersonService>();
+                    var pageNumber = context.GetArgument<int?>("pageNumber") ?? 1;
+                    var pageSize = context.GetArgument<int?>("pageSize") ?? 10;
+                    return await personService.GetPersonsAsync(pageNumber, pageSize);
+                })
+                .Description("Get a paginated list of persons");
+        }
+    }
+}

@@ -8,3 +8,8 @@ Server should run automatically when starting a workspace. To run manually, run:
 ```sh
 dotnet watch --urls=http://localhost:3000
 ```
+# listar la lista de usuarios
+{
+  "query": "{ users { data { id userName creationDate state roles { id name } } totalCount pageNumber pageSize } }"
+}
+
