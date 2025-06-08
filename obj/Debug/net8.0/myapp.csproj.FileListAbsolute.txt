@@ -51,3 +51,4 @@
 /home/user/msusersgraphql/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/user/msusersgraphql/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/user/msusersgraphql/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/user/msusersgraphql/obj/Debug/net8.0/myapp.sourcelink.json
