@@ -1,10 +1,9 @@
 using msusersgraphql.Models.Dtos;
 
-namespace msusersgraphql.Services.User
+namespace msusersgraphql.Services.Employee
 {
     public interface IEmployeeService
     {
         Task<EmployeeDto> GetEmployeeByIdAsync(string id);
-        Task<EmployeeListDto> GetEmployeesAsync(int pageNumber = 1, int pageSize = 10);
     }
 }

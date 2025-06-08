@@ -1,5 +1,6 @@
 using GraphQL.Types;
 using msusersgraphql.Models.Dtos;
+using msusersgraphql.Services.Employee;
 using msusersgraphql.Services.User;
 
 namespace msusersgraphql.GraphQL.Types

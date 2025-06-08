@@ -3,6 +3,9 @@ using GraphQL.Types;
 using msusersgraphql.GraphQL.Types;
 using msusersgraphql.Services.User;
 using Microsoft.Extensions.DependencyInjection;
+using msusersgraphql.Services.Employee;
+using msusersgraphql.Services.Person;
+using msusersgraphql.Services.Contact;
 
 namespace msusersgraphql.Models.GraphQL
 {

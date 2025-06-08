@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RentAdvisor\\Downloads\\ms_users_graphql\\ms_users_graphql\\myapp.csproj": {}
+    "/home/user/msusersgraphql/myapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RentAdvisor\\Downloads\\ms_users_graphql\\ms_users_graphql\\myapp.csproj": {
+    "/home/user/msusersgraphql/myapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RentAdvisor\\Downloads\\ms_users_graphql\\ms_users_graphql\\myapp.csproj",
+        "projectUniqueName": "/home/user/msusersgraphql/myapp.csproj",
         "projectName": "myapp",
-        "projectPath": "C:\\Users\\RentAdvisor\\Downloads\\ms_users_graphql\\ms_users_graphql\\myapp.csproj",
-        "packagesPath": "C:\\Users\\RentAdvisor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RentAdvisor\\Downloads\\ms_users_graphql\\ms_users_graphql\\obj\\",
+        "projectPath": "/home/user/msusersgraphql/myapp.csproj",
+        "packagesPath": "/home/user/.nuget/packages/",
+        "outputPath": "/home/user/msusersgraphql/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\RentAdvisor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/user/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -70,6 +63,14 @@
               "target": "Package",
               "version": "[8.2.0, )"
             },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.9.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[8.1.4, )"
@@ -94,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/nix/store/c67p00lksmyafxl5mhpx8zm67jwk95gr-dotnet-sdk-8.0.300/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,7 +1,13 @@
 using GraphQL;
 using Microsoft.Extensions.DependencyInjection;
 using msusersgraphql.Models.GraphQL;
+using msusersgraphql.Repositories.Contact;
+using msusersgraphql.Repositories.Employee;
+using msusersgraphql.Repositories.Person;
 using msusersgraphql.Repositories.User;
+using msusersgraphql.Services.Contact;
+using msusersgraphql.Services.Employee;
+using msusersgraphql.Services.Person;
 using msusersgraphql.Services.User;
 using System.Net.Http.Headers;
 

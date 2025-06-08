@@ -2,7 +2,7 @@ using System.Net.Http.Json;
 using System.Text;
 using msusersgraphql.Models.Dtos;
 
-namespace msusersgraphql.Repositories.User
+namespace msusersgraphql.Repositories.Contact
 {
     public class ContactRepository : IContactRepository
     {

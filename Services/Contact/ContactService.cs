@@ -1,7 +1,7 @@
 using msusersgraphql.Models.Dtos;
-using msusersgraphql.Repositories.User;
+using msusersgraphql.Repositories.Contact;
 
-namespace msusersgraphql.Services.User
+namespace msusersgraphql.Services.Contact
 {
     public class ContactService : IContactService
     {

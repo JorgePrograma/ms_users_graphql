@@ -1,7 +1,7 @@
 using msusersgraphql.Models.Dtos;
-using msusersgraphql.Repositories.User;
+using msusersgraphql.Repositories.Employee;
 
-namespace msusersgraphql.Services.User
+namespace msusersgraphql.Services.Employee
 {
     public class EmployeeService : IEmployeeService
     {
@@ -20,16 +20,6 @@ namespace msusersgraphql.Services.User
             }
 
             return await _employeeRepository.GetEmployeeByIdAsync(id);
-        }
-
-        public async Task<EmployeeListDto> GetEmployeesAsync(int pageNumber = 1, int pageSize = 10)
-        {
-            if (pageNumber <= 0 || pageSize <= 0)
-            {
-                throw new ArgumentException("Page number and page size must be greater than 0");
-            }
-
-            return await _employeeRepository.GetEmployeesAsync(pageNumber, pageSize);
         }
     }
 }

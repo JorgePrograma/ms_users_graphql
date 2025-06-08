@@ -1,5 +1,7 @@
 using GraphQL.Types;
 using msusersgraphql.Models.Dtos;
+using msusersgraphql.Services.Contact;
+using msusersgraphql.Services.Person;
 using msusersgraphql.Services.User;
 
 namespace msusersgraphql.GraphQL.Types

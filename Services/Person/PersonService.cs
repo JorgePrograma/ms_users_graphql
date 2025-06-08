@@ -1,7 +1,7 @@
 using msusersgraphql.Models.Dtos;
-using msusersgraphql.Repositories.User;
+using msusersgraphql.Repositories.Person;
 
-namespace msusersgraphql.Services.User
+namespace msusersgraphql.Services.Person
 {
     public class PersonService : IPersonService
     {
@@ -20,16 +20,6 @@ namespace msusersgraphql.Services.User
             }
 
             return await _personRepository.GetPersonByIdAsync(id);
-        }
-
-        public async Task<PersonListDto> GetPersonsAsync(int pageNumber = 1, int pageSize = 10)
-        {
-            if (pageNumber <= 0 || pageSize <= 0)
-            {
-                throw new ArgumentException("Page number and page size must be greater than 0");
-            }
-
-            return await _personRepository.GetPersonsAsync(pageNumber, pageSize);
         }
     }
 }

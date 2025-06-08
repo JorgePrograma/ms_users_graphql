@@ -1,6 +1,6 @@
 using msusersgraphql.Models.Dtos;
 
-namespace msusersgraphql.Repositories.User
+namespace msusersgraphql.Repositories.Contact
 {
     public interface IContactRepository
     {
